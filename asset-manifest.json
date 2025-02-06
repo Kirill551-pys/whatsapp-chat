@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Kirill551-pys/whatsapp-chat.git/static/css/main.736f9e97.css",
+    "main.js": "/Kirill551-pys/whatsapp-chat.git/static/js/main.bb899e1b.js",
+    "static/js/488.d1420737.chunk.js": "/Kirill551-pys/whatsapp-chat.git/static/js/488.d1420737.chunk.js",
+    "index.html": "/Kirill551-pys/whatsapp-chat.git/index.html",
+    "main.736f9e97.css.map": "/Kirill551-pys/whatsapp-chat.git/static/css/main.736f9e97.css.map",
+    "main.bb899e1b.js.map": "/Kirill551-pys/whatsapp-chat.git/static/js/main.bb899e1b.js.map",
+    "488.d1420737.chunk.js.map": "/Kirill551-pys/whatsapp-chat.git/static/js/488.d1420737.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.736f9e97.css",
+    "static/js/main.bb899e1b.js"
+  ]
+}
