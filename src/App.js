@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Routes, Route, useNavigate } from 'react-router-dom';
 import "./App.css";
 import AuthForm from './components/AuthForm';
 import ChatWindow from './components/ChatWindow';
@@ -15,7 +15,6 @@ function App() {
   };
 
   return (
-    <Router basename= "/whatsapp-chat">
       <Routes>
         <Route path="/" element={<AuthForm onAuth={handleAuth} />} />
         <Route
@@ -32,7 +31,6 @@ function App() {
           }
         />
       </Routes>
-    </Router>
   );
 }
 
