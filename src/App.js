@@ -1,40 +1,38 @@
 import React, { useState } from 'react';
-import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import "./App.css";
 import AuthForm from './components/AuthForm';
 import ChatWindow from './components/ChatWindow';
 
 function App() {
-  const [authData, setAuthData] = useState(null); // Состояние для хранения данных аутентификации
+  const [authData, setAuthData] = useState(null); 
   const navigate = useNavigate();
 
-  // Функция для обработки аутентификации
   const handleAuth = (credentials) => {
-    setAuthData(credentials); // Сохраняем данные аутентификации
+    setAuthData(credentials); 
     const { idInstance } = credentials;
-    navigate(`/chat/${idInstance}`); // Перенаправляем на страницу чата
+    navigate(`/chat/${idInstance}`); 
   };
 
   return (
-    <Routes>
-      {/* Маршрут для формы авторизации */}
-      <Route path="/" element={<AuthForm onAuth={handleAuth} />} />
-
-      {/* Маршрут для чата */}
-      <Route
-        path="/chat/:id"
-        element={
-          authData ? (
-            <ChatWindow 
-              idInstance={authData.idInstance} 
-              apiTokenInstance={authData.apiTokenInstance} 
-            />
-          ) : (
-            <div>Пожалуйста, авторизуйтесь</div>
-          )
-        }
-      />
-    </Routes>
+    <Router basename= "/whatsapp-chat">
+      <Routes>
+        <Route path="/" element={<AuthForm onAuth={handleAuth} />} />
+        <Route
+          path="/chat/:id"
+          element={
+            authData ? (
+              <ChatWindow 
+                idInstance={authData.idInstance} 
+                apiTokenInstance={authData.apiTokenInstance} 
+              />
+            ) : (
+              <div>Пожалуйста, авторизуйтесь</div>
+            )
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

@@ -2,10 +2,11 @@
   "name": "whatsapp-chat-ui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Kirill551-pys/whatsapp-chat.git",
+  "homepage": "https://kirill551-pys.github.io/whatsapp-chat/",
   "dependencies": {
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
+    "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5",
@@ -39,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.3.0"
   }
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ChatInput from './ChatInput'; 
+import PropTypes from 'prop-types'; 
 
 const ChatWindow = ({ idInstance, apiTokenInstance }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -56,7 +57,6 @@ const ChatWindow = ({ idInstance, apiTokenInstance }) => {
           </div>
         </div>
       )}
-
       {!isModalOpen && (
         <div className="chat-window">
           <ul className="chat-messages">
@@ -71,6 +71,11 @@ const ChatWindow = ({ idInstance, apiTokenInstance }) => {
       )}
     </div>
   );
+};
+
+ChatWindow.propTypes = {
+  idInstance: PropTypes.string.isRequired, 
+  apiTokenInstance: PropTypes.string.isRequired,
 };
 
 export default ChatWindow;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types'; 
 
 const AuthForm = ({ onAuth }) => {
   const [idInstance, setIdInstance] = useState('');
@@ -6,14 +7,11 @@ const AuthForm = ({ onAuth }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!idInstance || !apiTokenInstance) {
       console.error('Please fill in all fields');
       return;
     }
-
     console.log('Form submitted!');
-
     if (typeof onAuth === 'function') {
       onAuth({ idInstance, apiTokenInstance });
     } else {
@@ -46,6 +44,11 @@ const AuthForm = ({ onAuth }) => {
       <button type="submit" className='form-button'>Login</button>
     </form>
   );
+};
+
+
+AuthForm.propTypes = {
+  onAuth: PropTypes.func.isRequired,
 };
 
 export default AuthForm;
